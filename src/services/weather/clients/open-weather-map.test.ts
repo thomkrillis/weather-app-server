@@ -25,8 +25,12 @@ test('get returns the correctly remapped object', async () => {
   });
   const x = await client.get();
   const expected = {
+    city: sample.name,
     description: sample.weather[0].description,
     temperature: sample.main.temp,
+    temperature_feels_like: sample.main.feels_like,
+    wind_direction: 'North',
+    wind_speed: sample.wind.speed,
   };
   expect(x).toMatchObject(expected);
 });
