@@ -29,6 +29,10 @@ The service layer of the API is found in `src/services` and is responsible for t
 
 Services may have clients defined within them that contain business logic for manipulating data from external sources.
 
+#### Weather Service
+
+The weather service is designed to flexibly handle switching between external weather APIs. Inversion of control is provided by passing the desired client into the constructor of the service. The weather service has it's own contract to fulfill, which is decoupled from the schemas returned by the weather clients. Within the service, distinct clients are defined for each weather service that are each responsible for remapping data, keeping the top-level service file clean and agnostic of any client.
+
 ### External
 
 Wrappers around calls out to external services are found in `src/external`. These wrappers do not perform any mutations to external data, leaving that task to services and their clients.
