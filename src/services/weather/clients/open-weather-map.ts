@@ -1,3 +1,4 @@
+import WeatherClient from '.';
 import OpenWeatherMap from '../../../external/open-weather-map';
 import { OpenWeatherResponse } from '../../../external/open-weather-map/types';
 import { Weather } from '../types';
@@ -9,15 +10,15 @@ const mapData = (data: OpenWeatherResponse): Weather => {
   };
 };
 
-class OpenWeatherMapClient {
-  client: OpenWeatherMap;
+class OpenWeatherMapClient implements WeatherClient {
+  source: OpenWeatherMap;
   
-  constructor() {
-    this.client = new OpenWeatherMap();
+  constructor(source = new OpenWeatherMap()) {
+    this.source = source;
   }
 
-  async get() {
-    const data = await this.client.get();
+  async get(): Promise<Weather> {
+    const data = await this.source.get();
     return mapData(data);
   }
 }

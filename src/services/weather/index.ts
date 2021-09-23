@@ -1,12 +1,11 @@
+import WeatherClient from './clients';
 import { Weather } from './types';
-import OpenWeatherMapClient from './clients/open-weather-map';
 
+class WeatherService implements WeatherClient {
+  client: WeatherClient;
 
-class WeatherService {
-  client: OpenWeatherMapClient;
-
-  constructor(client?: OpenWeatherMapClient) {
-    this.client = client || new OpenWeatherMapClient();
+  constructor(client: WeatherClient) {
+    this.client = client;
   }
 
   async get(): Promise<Weather> {
