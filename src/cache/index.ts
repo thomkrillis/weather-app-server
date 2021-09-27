@@ -1,7 +1,4 @@
-export type CacheEntry<T> = {
-  data: T;
-  timestamp: Date;
-};
+import { CacheEntry } from './types';
 
 class MemoryCache<T> {
   cache: Record<string, CacheEntry<T>>;

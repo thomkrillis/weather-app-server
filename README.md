@@ -4,12 +4,13 @@ Proxy server for external weather API
 ## Requirements
 - Node.js
 - NPM or yarn
+- an API key for Open Weather Map
 
 ## Setup
 1. Clone the repo
 1. From the root directory run `npm install`
 1. Run `npm run build` to transpile TS to JS
-1. Run `npm run serve` to start the server
+1. Run `npm run serve` to start the server (it expects your Open Weather Map key to be set on the environment variable `APPID`)
 
 ## Testing
 `npm run test`
@@ -44,8 +45,8 @@ Wrappers around calls out to external services are found in `src/external`. Thes
 - [x] Add `service` directory for weather service business logic
 - [x] Add `routes` directory and relevant subdirectories
 - [x] Clean up app.js vs index.js
-- [ ] Add mocking of external API for testing
-- [ ] Replace sample with live calls
+- [x] Add mocking of external API for testing
+- [x] Replace sample with live calls
 - [ ] Add deserialization
-- [ ] Add caching of external response data
-- [ ] Add error handling
+- [x] Add caching of external response data
+- [x] Add error handling

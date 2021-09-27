@@ -53,8 +53,8 @@ class OpenWeatherMapClient implements WeatherClient {
     this.source = source;
   }
 
-  async get(): Promise<Weather> {
-    const data = await this.source.get();
+  async get(query: string): Promise<Weather> {
+    const data = await this.source.get(query);
     return mapData(data);
   }
 }

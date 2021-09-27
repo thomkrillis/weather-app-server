@@ -1,7 +1,7 @@
 import { Weather } from '../types';
 
 interface WeatherClient {
-  get(): Promise<Weather>;
+  get(query: string): Promise<Weather>;
 }
 
 export default WeatherClient;

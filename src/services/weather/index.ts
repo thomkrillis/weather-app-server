@@ -8,8 +8,8 @@ class WeatherService implements WeatherClient {
     this.client = client;
   }
 
-  async get(): Promise<Weather> {
-    return this.client.get();
+  async get(query: string): Promise<Weather> {
+    return this.client.get(query);
   }
 }
 
