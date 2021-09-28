@@ -13,12 +13,12 @@ class OpenWeatherMap {
 
   private static instance: OpenWeatherMap;
 
-  constructor() {
+  constructor(appid = process.env.APPID) {
     // Caching results, provide singleton to preserve cache
     if (OpenWeatherMap.instance) {
       return OpenWeatherMap.instance;
     }
-    this.appid = process.env.APPID;
+    this.appid = appid;
     if (!this.appid) throw new Error('no appid provided in environment');
 
     this.axiosInstance = axios.create({

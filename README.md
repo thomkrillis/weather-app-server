@@ -6,6 +6,11 @@ Proxy server for external weather API
 - NPM or yarn
 - an API key for Open Weather Map
 
+## Next Steps for Production-Ready
+- [ ] CI/CD including linting and testing
+- [ ] Containerization for consistent local development
+- [ ] Logging and alerting
+
 ## Setup
 1. Clone the repo
 1. From the root directory run `npm install`
@@ -48,5 +53,6 @@ Wrappers around calls out to external services are found in `src/external`. Thes
 - [x] Add mocking of external API for testing
 - [x] Replace sample with live calls
 - [ ] Add deserialization
+- [ ] Add basic auth check
 - [x] Add caching of external response data
 - [x] Add error handling
