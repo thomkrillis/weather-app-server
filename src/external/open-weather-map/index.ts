@@ -1,5 +1,4 @@
 import axios, { AxiosInstance } from 'axios';
-import { sample } from './sample';
 import { OpenWeatherResponse } from './types';
 import MemoryCache from '../../cache';
 
@@ -28,13 +27,7 @@ class OpenWeatherMap {
     OpenWeatherMap.instance = this;
   }
 
-  async get(query: string, mock = false): Promise<OpenWeatherResponse> {
-    // TODO: better mocking
-    if (mock) {
-      return new Promise((resolve) => {
-        resolve(sample);
-      });
-    }
+  async get(query: string): Promise<OpenWeatherResponse> {
     const cached = this.cache.get(query);
     if (cached) {
       return cached;
