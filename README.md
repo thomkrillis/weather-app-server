@@ -10,6 +10,7 @@ Proxy server for external weather API
 - [ ] CI/CD including linting and testing
 - [ ] Containerization for consistent local development
 - [ ] Logging and alerting
+- [ ] Endpoint documentation including response schema
 
 ## Setup
 1. Clone the repo

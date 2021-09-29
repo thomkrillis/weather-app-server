@@ -3,6 +3,10 @@ import OpenWeatherMap from '../../../external/open-weather-map';
 import { OpenWeatherResponse } from '../../../external/open-weather-map/types';
 import { Weather } from '../types';
 
+const kelvinToFarenheit = (kelvin: number): number => {
+  return (kelvin - 273.15) * 1.8000 + 32.00;
+};
+
 const mapWindDirection = (deg: number): string => {
   const windCompass = {
     nne: 11.25,
@@ -35,14 +39,18 @@ const mapWindDirection = (deg: number): string => {
   }
 };
 
+const metersPerSecondToMilesPerHour = (mps: number): number => {
+  return mps * 2.236936;
+};
+
 const mapData = (data: OpenWeatherResponse): Weather => {
   return {
     city: data.name,
     description: data.weather.length ? data.weather[0].description : 'unknown',
-    temperature: data.main.temp,
-    temperature_feels_like: data.main.feels_like,
+    temperature: kelvinToFarenheit(data.main.temp),
+    temperature_feels_like: kelvinToFarenheit(data.main.feels_like),
     wind_direction: mapWindDirection(data.wind.deg),
-    wind_speed: data.wind.speed,
+    wind_speed: metersPerSecondToMilesPerHour(data.wind.speed),
   };
 };
 
