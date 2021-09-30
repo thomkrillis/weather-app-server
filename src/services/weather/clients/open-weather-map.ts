@@ -1,7 +1,6 @@
-import WeatherClient from '.';
 import OpenWeatherMap from '../../../external/open-weather-map';
 import { OpenWeatherResponse } from '../../../external/open-weather-map/types';
-import { Weather } from '../types';
+import { Weather, WeatherClient } from '../types';
 
 const kelvinToFarenheit = (kelvin: number): number => {
   return (kelvin - 273.15) * 1.8000 + 32.00;

@@ -10,7 +10,7 @@ Proxy server for external weather API
 - [ ] CI/CD including linting and testing
 - [ ] Containerization for consistent local development
 - [ ] Logging and alerting
-- [ ] Endpoint documentation including response schema
+- [ ] Automated endpoint documentation including response schema
 
 ## Setup
 1. Clone the repo
@@ -23,6 +23,10 @@ Proxy server for external weather API
 
 ## Linting
 `npm run lint`
+
+## Endpoints
+
+See the [Endpoints doc](./docs/endpoints.md)
 
 ## Project Structure
 
@@ -54,6 +58,5 @@ Wrappers around calls out to external services are found in `src/external`. Thes
 - [x] Add mocking of external API for testing
 - [x] Replace sample with live calls
 - [ ] Add deserialization
-- [ ] Add basic auth check
 - [x] Add caching of external response data
 - [x] Add error handling

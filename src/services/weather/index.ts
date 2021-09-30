@@ -1,5 +1,4 @@
-import WeatherClient from './clients';
-import { Weather } from './types';
+import { Weather, WeatherClient } from './types';
 
 class WeatherService implements WeatherClient {
   client: WeatherClient;

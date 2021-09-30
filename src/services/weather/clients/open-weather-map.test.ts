@@ -25,13 +25,14 @@ test('get returns the correctly remapped object', async () => {
     });
   });
   const x = await client.get(QUERY);
+  // Some values are effectively snapshotted
   const expected = {
     city: sample.name,
     description: sample.weather[0].description,
-    temperature: sample.main.temp,
-    temperature_feels_like: sample.main.feels_like,
+    temperature: 74.58800000000005,
+    temperature_feels_like: 73.99400000000009,
     wind_direction: 'South-West',
-    wind_speed: sample.wind.speed,
+    wind_speed: 11.00572512,
   };
   expect(x).toMatchObject(expected);
 });

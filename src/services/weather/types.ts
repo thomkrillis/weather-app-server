@@ -6,3 +6,7 @@ export type Weather = {
   wind_direction: string;
   wind_speed: number;
 };
+
+export interface WeatherClient {
+  get(query: string): Promise<Weather>;
+}
